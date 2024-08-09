@@ -862,20 +862,20 @@ async function loadStatsData()
 			const CoingeckoResponse = await $.ajax("https://api.coingecko.com/api/v3/simple/price?ids=" + coinname + "&vs_currencies=usd");
 			var getcoin_price = CoingeckoResponse[coinname]['usd'];
 		}
-		else if(value.coin.symbol == "VRSC")
+		else if(value.coin.symbol == "BCH")
 		{
-			const CoingeckoResponse = await $.ajax("https://api.coingecko.com/api/v3/simple/price?ids=verus-coin&vs_currencies=usd");
-			var getcoin_price = CoingeckoResponse['verus-coin']['usd'];
+			const CoingeckoResponse = await $.ajax("https://api.coingecko.com/api/v3/simple/price?ids=BCH&vs_currencies=usd");
+			var getcoin_price = CoingeckoResponse['BCH']['usd'];
 		}
-		else if(value.coin.symbol == "MBC" || value.coin.symbol == "GEC" || value.coin.symbol == "ETX" || value.coin.symbol == "ISO")
+		else if(value.coin.symbol == "DOGE")
 		{
-			const bitxonexResponse = await $.ajax("https://www.bitxonex.com/api/v2/trade/public/markets/" + value.coin.symbol.toLowerCase() + "usdt/tickers");
-			var getcoin_price = bitxonexResponse.ticker.last;
+			const CoingeckoResponse = await $.ajax("https://api.coingecko.com/api/v3/simple/price?ids=DOGE&vs_currencies=usd");
+			var getcoin_price = CoingeckoResponse['DOGE']['usd'];
 		}
-		else if(value.coin.symbol == "REDE")
+		else if(value.coin.symbol == "LTC")
 		{
-			const XeggexResponse = await $.ajax("https://api.xeggex.com/api/v2/market/getbysymbol/REDEV2%2FUSDT");
-			var getcoin_price = XeggexResponse.lastPrice;
+			const CoingeckoResponse = await $.ajax("https://api.coingecko.com/api/v3/simple/price?ids=LTC&vs_currencies=usd");
+			var getcoin_price = CoingeckoResponse['LTC']['usd'];
 		}
 		else
 		{
