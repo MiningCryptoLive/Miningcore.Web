@@ -879,7 +879,7 @@ async function loadStatsData()
 		}
 		else
 		{
-			$.ajax("https://api.xeggex.com/api/v2/market/getbysymbol/"+ value.coin.symbol +"%2FUSDT").done(function(data)
+			$.ajax("https://api.coingecko.com/api/v3/simple/price/?ids=" + value.coin.symbol +"%2FUSDT").done(function(data)
 			{
 				var	getcoin_price = data['lastPrice'];
 				$("#text_Price").html(Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 9, minimumFractionDigits: 0}).format(getcoin_price));
