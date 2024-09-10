@@ -879,7 +879,7 @@ async function loadStatsData()
 		}
 		else
 		{
-			$.ajax("https://api.coingecko.com/api/v3/simple/price/?ids=" + coinname +"&vs_currencies=usd").done(function(data)
+			$.ajax("https://api.coingecko.com/api/v3/simple/price?ids=" + coinname + "&vs_currencies=usd").done(function(data)
 			{
 				var	getcoin_price = data['lastPrice'];
 				$("#text_Price").html(Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 6, minimumFractionDigits: 0}).format(getcoin_price));
