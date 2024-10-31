@@ -786,8 +786,8 @@ async function loadStatsData()
 		
 		var totalBlocks = value.totalBlocks;
 		var poolEffort = value.poolEffort * 100;
-		$("#blockchainHeight").text(value.networkStats.blockHeight.toLocaleString());
-		$("#poolBlocks").text(totalBlocks.toLocaleString());
+		$("#blockchainHeight").text(value.networkStats.blockHeight);
+		$("#poolBlocks").text(totalBlocks);
 		$("#connectedPeers").text(value.networkStats.connectedPeers);
 		$("#minimumPayment").html(`${value.paymentProcessing.minimumPayment.toLocaleString()} ${value.coin.symbol}<br>(${value.paymentProcessing.payoutScheme})`);
 		$("#totalPaid").html(value.totalPaid.toLocaleString() + " " +  value.coin.symbol );
