@@ -862,10 +862,15 @@ async function loadStatsData()
 			const CoingeckoResponse = await $.ajax("https://api.coingecko.com/api/v3/simple/price?ids=" + coinname + "&vs_currencies=usd");
 			var getcoin_price = CoingeckoResponse[coinname]['usd'];
 		}
-		else if(value.coin.symbol == "BCH")
+		else if(value.coin.symbol == "XMR")
 		{
-			const CoingeckoResponse = await $.ajax("https://api.coingecko.com/api/v3/simple/price?ids=BCH&vs_currencies=usd");
-			var getcoin_price = CoingeckoResponse['BCH']['usd'];
+			const CoingeckoResponse = await $.ajax("https://api.coingecko.com/api/v3/simple/price?ids=XMR&vs_currencies=usd");
+			var getcoin_price = CoingeckoResponse['XMR']['usd'];
+		}
+		else if(value.coin.symbol == "RVN")
+		{
+			const CoingeckoResponse = await $.ajax("https://api.coingecko.com/api/v3/simple/price?ids=RVN&vs_currencies=usd");
+			var getcoin_price = CoingeckoResponse['RVN']['usd'];
 		}
 		else if(value.coin.symbol == "DOGE")
 		{
