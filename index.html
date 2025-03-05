@@ -403,8 +403,10 @@ Apply one or more of the following classes to get the desired effect
 					<div class="info-box">
 						<span class="info-box-icon bg-aqua"><i class="far fa-money-bill-alt"></i></span>
 						<div class="info-box-content">
-							<span class="info-box-text">Coin Price</span>
-							<span class="info-box-number"><div id="info2"></div></span>
+							<span class="info-box-text">Current Price</span>
+                      <span class="info-box-number">
+                        <div id="info2"></div>
+                      </span>
 							<script>
 const getBtcData2 = async () => {
    fetch('https://min-api.cryptocompare.com/data/price?fsym=DOGE&tsyms=USD')
@@ -419,7 +421,7 @@ getBtcData2();
 tcount=setInterval(function(){
   tcount++
   if (tcount==10) {getBtcData2(); tcount=0}
-  document.getElementById("infotime1").innerHTML = 'Next update in ' + (900-tcount) + ' seconds'
+  document.getElementById("infotime2").innerHTML = 'Next update in ' + (900-tcount) + ' seconds'
 },1000);
 
 </script>
