@@ -328,11 +328,11 @@ Apply one or more of the following classes to get the desired effect
                       </span>
 			<script>
 const getBtcData1 = async () => {
-   fetch('https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD')
+   fetch('https://min-api.cryptocompare.com/data/price?fsym=doge&tsyms=USD')
   .then(response => response.json())
   .then(data1 => {
     console.log(data1);
-    document.getElementById("info1").innerHTML = '<b style="color:#000000;"> $' + 3.125 * data1.USD + '</b>'
+    document.getElementById("info1").innerHTML = '<b style="color:#000000;"> $' + 10000 * data1.USD + '</b>'
     
   });
 }
@@ -347,7 +347,7 @@ tcount=setInterval(function(){
                     </div>
                   </div>
                 </div>
-				<!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+				 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 					<div class="info-box">
 						<span class="info-box-icon bg-aqua"><i class="fas fa-dollar-sign"></i></span>
 						<div class="info-box-content">
@@ -382,7 +382,7 @@ tcount=setInterval(function(){
 							<span class="info-box-number"><div id="supply"></div></span>
 						</div>
 					</div>
-				</div> -->
+				</div> 
 				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 					<div class="info-box">
 						<span class="info-box-icon bg-aqua"><i class="fas fa-bars"></i></span>
@@ -994,33 +994,33 @@ tcount=setInterval(function(){
     });
   </script>
 <script>
-            async function fetchBitcoincashData() {
-                const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin-cash&order=market_cap_desc&per_page=1&page=1&sparkline=false';
+            async function fetchDogecoinData() {
+                const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=dogecoin&order=market_cap_desc&per_page=1&page=1&sparkline=false';
 
                 try {
                     const response = await fetch(apiUrl);
                     if (!response.ok) {
-                        throw new Error('Failed to fetch Bitcoin Cash data');
+                        throw new Error('Failed to fetch Dogecoin data');
                     }
 
                     const data = await response.json();
-                    const bitcoincash = data[0];
+                    const dogecoin = data[0];
 
                     // Update the HTML elements with the fetched data
-                    document.getElementById('price-usd').textContent = bitcoin-cash.current_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-                    document.getElementById('market-cap').textContent = bitcoin-cash.market_cap.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-                    document.getElementById('change').textContent = `${bitcoin-cash.price_change_percentage_24h.toFixed(2)}%`;
-                    document.getElementById('supply').textContent = bitcoin-cash.circulating_supply.toLocaleString('en-US', { minimumFractionDigits: 0 });
+                    document.getElementById('price-usd').textContent = dogecoin.current_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                    document.getElementById('market-cap').textContent = dogecoin.market_cap.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                    document.getElementById('change').textContent = `${dogecoin.price_change_percentage_24h.toFixed(2)}%`;
+                    document.getElementById('supply').textContent = dogecoin.circulating_supply.toLocaleString('en-US', { minimumFractionDigits: 0 });
 
                 } catch (error) {
-                    console.error('Error fetching Bitcoin Cash data:', error);
+                    console.error('Error fetching Dogecoin data:', error);
                     document.getElementById('market-data').textContent = 'Error loading data. Please try again later.';
                 }
             }
 
             // Fetch data initially and then every 30 seconds
-            fetchBitcoincashData();
-            setInterval(fetchBitcoincashData, 60000); // Refresh every 30 seconds (30,000 milliseconds)
+            fetchDogecoinData();
+            setInterval(fetchDogecoinData, 60000); // Refresh every 30 seconds (30,000 milliseconds)
         </script>
 
 </body>
