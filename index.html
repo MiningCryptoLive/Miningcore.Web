@@ -7,7 +7,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <meta name="msapplication-TileImage" content="img/pool-icon.png">
 
-  <title>SOLOPOOL.PRO</title>
+  <title>BCH.SOLOPOOL.PRO</title>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   
   <link rel="apple-touch-icon" href="img/pool-icon.png">  
@@ -257,7 +257,7 @@ Apply one or more of the following classes to get the desired effect
       <nav class="navbar navbar-static-top" role="navigation">
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"><i class="fas fa-bars"></i></a>
 
-        <span class="header-text"><b style="color:black">SOLOPOOL.PRO</b></span>
+        <span class="header-text"><b style="color:black">BCH.SOLOPOOL.PRO</b></span>
 	  
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
@@ -328,11 +328,11 @@ Apply one or more of the following classes to get the desired effect
                       </span>
 			<script>
 const getBtcData1 = async () => {
-   fetch('https://min-api.cryptocompare.com/data/price?fsym=doge&tsyms=USD')
+   fetch('https://min-api.cryptocompare.com/data/price?fsym=bch&tsyms=USD')
   .then(response => response.json())
   .then(data1 => {
     console.log(data1);
-    document.getElementById("info1").innerHTML = '<b style="color:#000000;"> $' + 10000 * data1.USD + '</b>'
+    document.getElementById("info1").innerHTML = '<b style="color:#000000;"> $' + 3.125 * data1.USD + '</b>'
     
   });
 }
@@ -462,21 +462,10 @@ tcount=setInterval(function(){
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-					<div class="info-box">
-						<span class="info-box-icon bg-black-gradient"><i class="fas fa-clock"></i></span>
-						<div class="info-box-content">
-							<span class="info-box-text">Pool TTF</span>
-							<span class="info-box-number"><div id="text_TTFBlocks"></div></span>
-						</div>
-					</div>
-				</div>
 
 			</div>	<!-- /.row -->
 				
-				
-				
-				
+
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
 					<div class="card card-chart">
@@ -994,33 +983,33 @@ tcount=setInterval(function(){
     });
   </script>
 <script>
-            async function fetchDogecoinData() {
-                const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=dogecoin&order=market_cap_desc&per_page=1&page=1&sparkline=false';
+            async function fetchBitcoincashData() {
+                const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin-cash&order=market_cap_desc&per_page=1&page=1&sparkline=false';
 
                 try {
                     const response = await fetch(apiUrl);
                     if (!response.ok) {
-                        throw new Error('Failed to fetch Dogecoin data');
+                        throw new Error('Failed to fetch Bitcoincash data');
                     }
 
                     const data = await response.json();
-                    const dogecoin = data[0];
+                    const bitcoincash = data[0];
 
                     // Update the HTML elements with the fetched data
-                    document.getElementById('price-usd').textContent = dogecoin.current_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-                    document.getElementById('market-cap').textContent = dogecoin.market_cap.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-                    document.getElementById('change').textContent = `${dogecoin.price_change_percentage_24h.toFixed(2)}%`;
-                    document.getElementById('supply').textContent = dogecoin.circulating_supply.toLocaleString('en-US', { minimumFractionDigits: 0 });
+                    document.getElementById('price-usd').textContent = bitcoin-cash.current_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                    document.getElementById('market-cap').textContent = bitcoin-cash.market_cap.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                    document.getElementById('change').textContent = `${bitcoin-cash.price_change_percentage_24h.toFixed(2)}%`;
+                    document.getElementById('supply').textContent = bitcoin-cash.circulating_supply.toLocaleString('en-US', { minimumFractionDigits: 0 });
 
                 } catch (error) {
-                    console.error('Error fetching Dogecoin data:', error);
+                    console.error('Error fetching Bitcoincash data:', error);
                     document.getElementById('market-data').textContent = 'Error loading data. Please try again later.';
                 }
             }
 
             // Fetch data initially and then every 30 seconds
-            fetchDogecoinData();
-            setInterval(fetchDogecoinData, 60000); // Refresh every 30 seconds (30,000 milliseconds)
+            fetchBitcoincashData();
+            setInterval(fetchBitcoincashData, 60000); // Refresh every 30 seconds (30,000 milliseconds)
         </script>
 
 </body>
