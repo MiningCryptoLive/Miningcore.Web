@@ -984,7 +984,7 @@ tcount=setInterval(function(){
   </script>
 <script>
             async function fetchBitcoincashData() {
-                const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin-cash&order=market_cap_desc&per_page=1&page=1&sparkline=false';
+                const apiUrl = 'https://api.coingecko.com/api/v3/coins/market_chart?vs_currency=usd&ids=bitcoin-cash&order=market_cap_desc&per_page=1&page=1&sparkline=false';
 
                 try {
                     const response = await fetch(apiUrl);
