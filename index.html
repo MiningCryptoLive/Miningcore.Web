@@ -983,8 +983,8 @@ tcount=setInterval(function(){
     });
   </script>
 <script>
-            async function fetchBitcoincashData() {
-                const apiUrl = 'https://api.coingecko.com/api/v3/coins/market_chart?vs_currency=usd&ids=bitcoin-cash&order=market_cap_desc&per_page=1&page=1&sparkline=false';
+            async function fetchBitcoin-cashData() {
+                const apiUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin-cash&order=market_cap_desc&per_page=1&page=1&sparkline=false';
 
                 try {
                     const response = await fetch(apiUrl);
@@ -993,7 +993,7 @@ tcount=setInterval(function(){
                     }
 
                     const data = await response.json();
-                    const bitcoincash = data[0];
+                    const bitcoin-cash = data[0];
 
                     // Update the HTML elements with the fetched data
                     document.getElementById('price-usd').textContent = bitcoin-cash.current_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
@@ -1008,8 +1008,8 @@ tcount=setInterval(function(){
             }
 
             // Fetch data initially and then every 30 seconds
-            fetchBitcoincashData();
-            setInterval(fetchBitcoincashData, 60000); // Refresh every 30 seconds (30,000 milliseconds)
+            fetchBitcoin-cashData();
+            setInterval(fetchBitcoin-cashData, 60000); // Refresh every 30 seconds (30,000 milliseconds)
         </script>
 
 </body>
