@@ -332,7 +332,7 @@ const getBtcData1 = async () => {
   .then(response => response.json())
   .then(data1 => {
     console.log(data1);
-    document.getElementById("info1").innerHTML = '<b style="color:#000000;"> $' + 3.125 * data1.USD + '</b>'
+    document.getElementById("info1").innerHTML = '<b style="color:#000000;"> $' + 0.6 * data1.USD + '</b>'
     
   });
 }
@@ -347,42 +347,7 @@ tcount=setInterval(function(){
                     </div>
                   </div>
                 </div>
-				 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-					<div class="info-box">
-						<span class="info-box-icon bg-aqua"><i class="fas fa-dollar-sign"></i></span>
-						<div class="info-box-content">
-							<span class="info-box-text">Current Price</span>
-							<span class="info-box-number"><div id="price-usd"></div></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-					<div class="info-box">
-						<span class="info-box-icon bg-green"><i class="fas fa-dollar-sign"></i></span>
-						<div class="info-box-content">
-							<span class="info-box-text">Market Cap</span>
-							<span class="info-box-number"><div id="market-cap"></div></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-					<div class="info-box">
-						<span class="info-box-icon bg-orange"><i class="fas fa-dollar-sign"></i></span>
-						<div class="info-box-content">
-							<span class="info-box-text">24h Change</span>
-							<span class="info-box-number"><div id="change"></div></span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-					<div class="info-box">
-						<span class="info-box-icon bg-green"><i class="fas fa-coins"></i></span>
-						<div class="info-box-content">
-							<span class="info-box-text">Circulating Supply</span>
-							<span class="info-box-number"><div id="supply"></div></span>
-						</div>
-					</div>
-				</div> 
+				
 				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
 					<div class="info-box">
 						<span class="info-box-icon bg-aqua"><i class="fas fa-bars"></i></span>
